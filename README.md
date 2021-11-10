@@ -3,8 +3,8 @@
 # Jack-o'-lantern 🎃
 
 <a href="https://discord.js.org/#/"><img src="https://img.shields.io/badge/Discord.js-v13.3.1-3eaf7c.svg?logo=npm" /></a>
-<a href="https://github.com/sujalgoel/Jack-o-lantern/stargazers"><img src="https://img.shields.io/github/stars/sujalgoel/Jack-o-lantern.svg?label=Stars" /></a>
-<a href="https://github.com/sujalgoel/Jack-o-lantern/network/members"><img src="https://img.shields.io/github/forks/sujalgoel/Jack-o-lantern.svg?color=ff0000&label=Forks" /></a>
+<a href="https://github.com/sujalgoel/Jack-o-lantern/stargazers"><img src="https://img.shields.io/github/stars/sujalgoel/jack-o-lantern.svg?label=Stars" /></a>
+<a href="https://github.com/sujalgoel/Jack-o-lantern/network/members"><img src="https://img.shields.io/github/forks/sujalgoel/jack-o-lantern.svg?color=ff0000&label=Forks" /></a>
 <a href="https://github.com/sujalgoel/Jack-o-lantern/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-orange" /></a>
 <a href="http://jack-o-lantern.sujalgoel.engineer/"><img src="https://img.shields.io/badge/Website-Yes-amiajokegreen.svg" /></a>
 
