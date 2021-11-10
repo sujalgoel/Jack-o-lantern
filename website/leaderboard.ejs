@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+		
+		<title>Leaderboard | Jack-o'-lantern</title>
+
+		<meta name="theme-color" content="#f75f1c" />
+		<meta property="og:image" content="/images/big-logo.png" />
+		<meta property="og:url" content="https://jack-o-lantern.sujalgoel.engineer/" />
+		<meta property="og:site_name" content="Jack-o'-lantern" />
+		<meta property="og:title" content="Jack-o'-lantern" />
+		<meta
+			property="og:description"
+			content="Jack-o'-lantern is a Halloween based Discord bot."
+		/>
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta
+			property="twitter:url"
+			content="https://jack-o-lantern.sujalgoel.engineer/"
+		/>
+		<meta property="twitter:title" content="Jack-o'-lantern" />
+		<meta
+			property="twitter:description"
+			content="Jack-o'-lantern is a Halloween based Discord bot."
+		/>
+		<meta property="twitter:image" content="./images/big-logo.png" />
+
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		/>
+		<link
+			class="favicon"
+			rel="shortcut icon"
+			type="icon/png"
+			href="./images/logo.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+			integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a href="/" class="active">Jack-o'-lantern</a>
+            <a class="right" href="https://discord.com/oauth2/authorize?client_id=772437334394011648&scope=bot+applications.commands&permissions=2192663808">Invite</a>
+			<a href="/leaderboard" class="right">Leaderboard</a>
+			<a class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<img class="image" src="./images/big-logo.png" draggable="false" />
+		<main>
+			<h1 style="text-align: center;">
+				<img
+					style="width: 40px; margin-bottom: 6px;"
+					src="./images/leaderboard.png"
+					draggable="false"
+				/>&nbsp;Candy Leaderboard
+			</h1>
+			<hr />
+			<div class="columns">
+				<div class="column">
+					<h2 style="margin-bottom: 5px;">Users (<%= total %>)</h2>
+					<% users.forEach(user => { %>
+					<div class="flex-container">
+						<input
+							type="text"
+							class="textbox"
+							value="<%= user %>"
+							style="width: 100%; height: 100%; display: block;"
+							readonly
+						/>
+					</div>
+					<%}) %>
+				</div>
+			</div>
+		</main>
+		<%- include("./components/footer") %>
+		<script src="./js/block.js"></script>
+		<script src="./js/navbar.js"></script>
+	</body>
+</html>

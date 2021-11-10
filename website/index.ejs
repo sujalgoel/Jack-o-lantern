@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+
+		<title>Jack-o'-lantern</title>
+
+		<meta name="theme-color" content="#f75f1c" />
+		<meta property="og:image" content="/images/big-logo.png" />
+		<meta
+			property="og:url"
+			content="https://jack-o-lantern.sujalgoel.engineer/"
+		/>
+		<meta property="og:site_name" content="Jack-o'-lantern" />
+		<meta property="og:title" content="Jack-o'-lantern" />
+		<meta
+			property="og:description"
+			content="Jack-o'-lantern is a Halloween based Discord bot."
+		/>
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta
+			property="twitter:url"
+			content="https://jack-o-lantern.sujalgoel.engineer/"
+		/>
+		<meta property="twitter:title" content="Jack-o'-lantern" />
+		<meta
+			property="twitter:description"
+			content="Jack-o'-lantern is a Halloween based Discord bot."
+		/>
+		<meta property="twitter:image" content="./images/big-logo.png" />
+
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		/>
+		<link
+			class="favicon"
+			rel="shortcut icon"
+			type="icon/png"
+			href="./images/logo.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+			integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a href="/" class="active">Jack-o'-lantern</a>
+			<a class="right" href="https://discord.com/oauth2/authorize?client_id=772437334394011648&scope=bot+applications.commands&permissions=2192663808">Invite</a>
+			<a href="/leaderboard" class="right">Leaderboard</a>
+			<a class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<main>
+			<h1 style="text-align: center;">Jack-o'-lantern</h1>
+			<hr />
+			<div class="columns" style="text-align: center; margin-bottom: 60px;">
+				<div class="column" style="background-color: #000000;">
+					<img
+						class="avatar"
+						draggable="false"
+						src="https://cdn.discordapp.com/avatars/772437334394011648/a026e2fcf62c1d614fe1826f5de1bc0c.png?size=4096"
+					/>
+				</div>
+			</div>
+		</main>
+		<%- include("./components/footer") %>
+		<script src="./js/block.js"></script>
+		<script src="./js/navbar.js"></script>
+	</body>
+</html>
