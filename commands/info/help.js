@@ -18,7 +18,6 @@ module.exports = class Help extends Command {
 			category: 'Info',
 			description: 'Stop it. Get some help.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 
@@ -89,6 +88,7 @@ module.exports = class Help extends Command {
 				)
 				.setTitle('Help')
 				.setTimestamp()
+				.setImage('https://i.sujalgoel.engineer/yxkqsVfC.png')
 				.setColor('#f75f1c')
 				.setDescription(
 					'My prefix is `/` \nFor more info on a specific command, type `/help <command>`',
@@ -131,6 +131,7 @@ module.exports = class Help extends Command {
 								size: 2048,
 							}),
 						)
+						.setImage('https://i.sujalgoel.engineer/yxkqsVfC.png')
 						.setTitle(`Help - ${category}`)
 						.setColor('#f75f1c')
 						.setTimestamp();
@@ -257,7 +258,7 @@ module.exports = class Help extends Command {
 				collector.resetTimer();
 			});
 
-			this.client.on('messageDelete', async (m) => {
+			client.on('messageDelete', async (m) => {
 				if (m.id === msg.id) {
 					return collector.stop();
 				}

@@ -11,7 +11,6 @@ module.exports = class Leaderboard extends Command {
 			category: 'Info',
 			description: 'Take a look at the candies leaderboard.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 
@@ -42,6 +41,16 @@ module.exports = class Leaderboard extends Command {
 				interaction.user.displayAvatarURL({ dynamic: true, size: 2048 }),
 			)
 			.setTimestamp();
-		interaction.editReply({ embeds: [embed] });
+
+		const btn1 = new Discord.MessageButton()
+			.setStyle('LINK')
+			.setEmoji('908291743408082975')
+			.setURL('https://jack-o-lantern.sujalgoel.engineer/leaderboard')
+			.setLabel('Leaderboard');
+
+		interaction.editReply({
+			embeds: [embed],
+			components: [{ type: 1, components: [btn1] }],
+		});
 	}
 };

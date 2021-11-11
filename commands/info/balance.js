@@ -32,7 +32,7 @@ module.exports = class Balance extends Command {
 			const embed = new Discord.MessageEmbed()
 				.setColor('#f04947')
 				.setDescription(
-					'<:Error:907325609334685756> | This user isn\'t registered.',
+					`<:Error:907325609334685756> | ${member === interaction.user.id ? 'You aren\'t registered.' : 'This user isn\'t registered.'}`,
 				);
 			return interaction.editReply({ embeds: [embed] });
 		}

@@ -10,7 +10,6 @@ module.exports = class Ping extends Command {
 			category: 'Info',
 			description: 'Check my latency.',
 			cooldown: 3,
-			defaultPermission: true,
 		});
 	}
 

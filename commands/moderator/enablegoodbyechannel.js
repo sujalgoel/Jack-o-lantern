@@ -26,7 +26,6 @@ module.exports = class EnableGoodbyeChannel extends Command {
 			category: 'Moderator',
 			description: 'Enable goodbye channel plugin.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 

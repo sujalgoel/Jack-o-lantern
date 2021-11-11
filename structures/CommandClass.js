@@ -11,11 +11,12 @@ module.exports = class Command {
 		this.category = meta.category || null;
 		this.description = meta.description || null;
 		this.cooldown = meta.cooldown || 0; // in seconds
-		this.defaultPermission = meta.defaultPermission || false;
 		this.contextDescription = meta.contextDescription || null;
 	}
 
 	async run(message, run) {
-		throw new Error(`The Slash Command "${this.name}" does not provide a run method.`);
+		throw new Error(
+			`The Slash Command "${this.name}" does not provide a run method.`,
+		);
 	}
 };

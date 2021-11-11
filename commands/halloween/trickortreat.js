@@ -13,7 +13,6 @@ module.exports = class TrickorTreat extends Command {
 			category: 'Halloween',
 			description: 'You already know what I mean. Don\'t you?',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 
@@ -215,6 +214,23 @@ module.exports = class TrickorTreat extends Command {
 					btn2.setDisabled(true);
 					interaction.editReply({
 						embeds: [embed2],
+						components: [{ type: 1, components: [btn1, btn2] }],
+					});
+				}
+			});
+
+			client.on('messageDelete', async (m) => {
+				if (m.id === msg.id) {
+					return collector.stop();
+				}
+			});
+
+			collector.on('end', async (collected, reason) => {
+				if (reason === 'time') {
+					btn1.setDisabled(true);
+					btn2.setDisabled(true);
+					interaction.editReply({
+						embeds: [embed1],
 						components: [{ type: 1, components: [btn1, btn2] }],
 					});
 				}

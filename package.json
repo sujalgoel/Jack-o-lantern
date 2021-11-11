@@ -1,8 +1,21 @@
 {
+	"name": "jack-o-lantern",
+	"version": "1.0.0",
+	"description": "Jack-o'-lantern is a Halloween theme based Discord bot.",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
 		"test": "nodemon index.js"
+	},
+	"homepage": "https://jack-o-lantern.sujalgoel.engineer/",
+	"license": "CC BY-NC-ND 4.0",
+	"bugs": {
+		"url": "https://github.com/sujalgoel/Jack-o-lantern/issues"
+	},
+	"author": "Sujal Goel",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sujalgoel/Jack-o-lantern.git"
 	},
 	"dependencies": {
 		"@discordjs/voice": "^0.7.2",

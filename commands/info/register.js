@@ -11,7 +11,6 @@ module.exports = class Register extends Command {
 			category: 'Info',
 			description: 'Register your profile in our database.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 
@@ -27,14 +26,14 @@ module.exports = class Register extends Command {
 				.setDescription(
 					'<:Success:907325753698447400> | Successfully registered your account and rewarded you **100 candies**. 🍬',
 				);
-			interaction.editReply({ embeds: [embed] });
+			return interaction.editReply({ embeds: [embed] });
 		} else {
 			const embed = new Discord.MessageEmbed()
 				.setColor('#f04947')
 				.setDescription(
 					'<:Error:907325609334685756> | Your account is already registered.',
 				);
-			interaction.editReply({ embeds: [embed] });
+			return interaction.editReply({ embeds: [embed] });
 		}
 	}
 };

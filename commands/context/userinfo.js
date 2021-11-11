@@ -12,7 +12,6 @@ module.exports = class UserInfo extends Command {
 			category: 'Context',
 			contextDescription: 'Get information about a user. (spotify card supported)',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 	async run(client, interaction) {
@@ -61,7 +60,7 @@ module.exports = class UserInfo extends Command {
 						name: 'Account Info',
 						value: `
 			                    **❯ Bot:** ${member.user.bot ? 'Yes' : 'No'}
-			                    **❯ ID:** ${member.user.id}
+			                    **❯ Id:** ${member.user.id}
 			                    **❯ Created:** <t:${Math.floor(
 		member.user.createdTimestamp / 1000,
 	)}:F>`,

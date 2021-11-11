@@ -8,7 +8,7 @@
 <a href="https://github.com/sujalgoel/Jack-o-lantern/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-orange" /></a>
 <a href="http://jack-o-lantern.sujalgoel.engineer/"><img src="https://img.shields.io/badge/Website-Yes-amiajokegreen.svg" /></a>
 
-> A Halloween theme based discord bot with many halloween games and events.
+> Jack-o'-lantern is a Halloween theme based Discord bot.
 
 ## Contributing 🤝
 

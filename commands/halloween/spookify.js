@@ -18,7 +18,6 @@ module.exports = class SpookifyCmd extends Command {
 			category: 'Halloween',
 			description: 'Spookifies user avatar.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 

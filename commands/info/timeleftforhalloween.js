@@ -10,7 +10,6 @@ module.exports = class TimeLeftForHalloween extends Command {
 			category: 'Info',
 			description: 'Get to know the time left for the next halloween.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 
@@ -41,6 +40,7 @@ module.exports = class TimeLeftForHalloween extends Command {
 				interaction.user.displayAvatarURL({ dynamic: true, size: 2048 }),
 			)
 			.setTimestamp();
+
 		const btn1 = new Discord.MessageButton()
 			.setStyle('LINK')
 			.setEmoji('🎃')

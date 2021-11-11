@@ -18,6 +18,10 @@ document.onkeydown = function(e) {
 	}
 };
 
-window.addEventListener('contextmenu', function(e) {
-	e.preventDefault();
-}, false);
+window.addEventListener(
+	'contextmenu',
+	function(e) {
+		e.preventDefault();
+	},
+	false,
+);

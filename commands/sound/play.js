@@ -11,7 +11,6 @@ module.exports = class Ping extends Command {
 			category: 'Sound',
 			description: 'Plays some spooky sound.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 
@@ -19,12 +18,12 @@ module.exports = class Ping extends Command {
 		try {
 			const channel = interaction.member.voice.channel;
 			if (!channel) {
-				const embed1 = new Discord.MessageEmbed()
+				const embed = new Discord.MessageEmbed()
 					.setColor('#f04947')
 					.setDescription(
 						'<:Error:907325609334685756> | Please connect to a voice channel to use this command.',
 					);
-				return interaction.editReply({ embeds: [embed1] });
+				return interaction.editReply({ embeds: [embed] });
 			}
 			const sounds = [
 				'chainsaw',
@@ -60,7 +59,7 @@ module.exports = class Ping extends Command {
 				.setEmoji('✖️')
 				.setCustomId('no');
 
-			const embed1 = new Discord.MessageEmbed()
+			const embed = new Discord.MessageEmbed()
 				.setAuthor(
 					`${client.user.username}'s Spooky Sounds`,
 					client.user.displayAvatarURL({ format: 'png', size: 2048 }),
@@ -74,7 +73,7 @@ module.exports = class Ping extends Command {
 				.setTimestamp();
 
 			const msg = await interaction.editReply({
-				embeds: [embed1],
+				embeds: [embed],
 				components: [{ type: 1, components: [btn1, btn2] }],
 			});
 
@@ -86,6 +85,7 @@ module.exports = class Ping extends Command {
 				filter: (fn) => fn,
 				time: 60000,
 			});
+
 			collector.on('collect', async (button) => {
 				if (button.user.id !== interaction.member.id) {
 					return button.reply({
@@ -99,17 +99,34 @@ module.exports = class Ping extends Command {
 				if (button.customId === 'yes') {
 					btn1.setDisabled(true);
 					btn2.setStyle('SECONDARY').setDisabled(true);
-					embed1.setDescription('Yay! I knew it.');
+					embed.setDescription('Yay! I knew it.');
 					interaction.editReply({
-						embeds: [embed1],
+						embeds: [embed],
 						components: [{ type: 1, components: [btn1, btn2] }],
 					});
 				} else {
 					btn1.setStyle('SECONDARY').setDisabled(true);
 					btn2.setDisabled(true);
-					embed1.setDescription('Then, you wanna it try again?');
+					embed.setDescription('Then, you wanna it try again?');
 					interaction.editReply({
-						embeds: [embed1],
+						embeds: [embed],
+						components: [{ type: 1, components: [btn1, btn2] }],
+					});
+				}
+			});
+
+			client.on('messageDelete', async (m) => {
+				if(m.id === msg.id) {
+					return collector.stop();
+				}
+			});
+
+			collector.on('end', async (collected, reason) => {
+				if(reason === 'time') {
+					btn1.setDisabled(true);
+					btn2.setDisabled(true);
+					interaction.editReply({
+						embeds: [embed],
 						components: [{ type: 1, components: [btn1, btn2] }],
 					});
 				}

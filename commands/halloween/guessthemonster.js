@@ -16,7 +16,6 @@ module.exports = class GuessTheMonster extends Command {
 			category: 'Halloween',
 			description: 'Guess the monster with it\'s image.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 
@@ -219,8 +218,8 @@ module.exports = class GuessTheMonster extends Command {
 				return delete currentGames[interaction.guild.id];
 			});
 
-			this.client.on('messageDelete', async (m) => {
-				if(m.id === msg.id) {
+			client.on('messageDelete', async (m) => {
+				if (m.id === msg.id) {
 					return collector.stop();
 				}
 			});

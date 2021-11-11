@@ -11,7 +11,6 @@ module.exports = class Monster extends Command {
 			category: 'Halloween',
 			description: 'Gets the list of Discord Monsters.',
 			cooldown: 3,
-			defaultPermission: true,
 		});
 	}
 
@@ -142,7 +141,7 @@ module.exports = class Monster extends Command {
 				collector.resetTimer();
 			});
 
-			this.client.on('messageDelete', async (m) => {
+			client.on('messageDelete', async (m) => {
 				if(m.id === msg.id) {
 					return collector.stop();
 				}

@@ -14,7 +14,6 @@ module.exports = class RushforCandy extends Command {
 			category: 'Halloween',
 			description: 'Rush to pick up the dropped candies.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 
@@ -162,9 +161,6 @@ module.exports = class RushforCandy extends Command {
 									(Date.now() - gameCreatedAt) / 1000
 								} seconds** from the ground.`,
 							)
-							.setThumbnail(
-								client.user.displayAvatarURL({ format: 'png', size: 2048 }),
-							)
 							.setColor('#f75f1c')
 							.setFooter(
 								`Requested by ${interaction.user.tag}`,
@@ -194,7 +190,7 @@ module.exports = class RushforCandy extends Command {
 					return delete currentGames[interaction.guild.id];
 				});
 
-				this.client.on('messageDelete', async (m) => {
+				client.on('messageDelete', async (m) => {
 					if(m.id === msg.id) {
 						return Collector.stop();
 					}
@@ -224,9 +220,6 @@ module.exports = class RushforCandy extends Command {
 									dynamic: true,
 									size: 2048,
 								}),
-							)
-							.setThumbnail(
-								client.user.displayAvatarURL({ format: 'png', size: 2048 }),
 							)
 							.setDescription(
 								'You all were too slow! The stranger left the street.',

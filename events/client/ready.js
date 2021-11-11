@@ -22,13 +22,20 @@ module.exports = class ReadyEvent extends Event {
 		});
 	}
 	async run() {
+		// this.client.guilds.cache.get('').leave();
+
+		for (const [id, guild] of this.client.guilds.cache) {
+			// console.log(guild);
+			await guild.members.fetch();
+		}
+
 		await new CommandHandler(this.client)
 			.build('../commands')
 			.then(() => console.log('Commands are now loaded.'));
-		for (const [id, guild] of this.client.guilds.cache) {
-			await guild.members.fetch();
-		}
+
+		this.client.user.setStatus('dnd');
 		this.client.user.setActivity('🎃 Trick or Treat!', { type: 'PLAYING' });
+
 		console.log(`${this.client.user.tag} is online.`);
 
 		app.get('/', async (req, res) => {

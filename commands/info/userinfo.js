@@ -19,7 +19,6 @@ module.exports = class UserInfoCmd extends Command {
 			category: 'Info',
 			description: 'Get information about a user. (spotify card supported)',
 			cooldown: 3,
-			defaultPermission: true,
 		});
 	}
 

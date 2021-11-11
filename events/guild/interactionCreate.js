@@ -11,8 +11,6 @@ module.exports = class InteractionCreate extends Event {
 		});
 	}
 	async run(interaction) {
-		const client = this.client;
-
 		switch (true) {
 		case interaction.isCommand(): {
 			if (interaction.user.bot) {
@@ -31,7 +29,7 @@ module.exports = class InteractionCreate extends Event {
 					);
 				return interaction.reply({ embeds: [embed] });
 			}
-			const command = client.commands.get(interaction.commandName);
+			const command = this.client.commands.get(interaction.commandName);
 			if (!command) return;
 			try {
 				await interaction.deferReply();
@@ -53,7 +51,7 @@ module.exports = class InteractionCreate extends Event {
 				}
 				cmdCooldown[interaction.user.id][interaction.commandName] =
 						Date.now() + 1000 * command.cooldown;
-				command.run(client, interaction);
+				command.run(this.client, interaction);
 			} catch (e) {
 				console.log(e);
 			}
@@ -76,7 +74,7 @@ module.exports = class InteractionCreate extends Event {
 					);
 				return interaction.reply({ embeds: [embed] });
 			}
-			const command = client.commands.get(interaction.commandName);
+			const command = this.client.commands.get(interaction.commandName);
 			if (!command) return;
 			try {
 				await interaction.deferReply();
@@ -98,7 +96,7 @@ module.exports = class InteractionCreate extends Event {
 				}
 				cntxtCooldown[interaction.user.id][interaction.commandName] =
 						Date.now() + 1000 * command.cooldown;
-				command.run(client, interaction);
+				command.run(this.client, interaction);
 			} catch (e) {
 				console.log(e);
 			}

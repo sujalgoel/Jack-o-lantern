@@ -11,7 +11,6 @@ module.exports = class DisableWelcomeChannel extends Command {
 			category: 'Moderator',
 			description: 'Disable welcome channel plugin.',
 			cooldown: 10,
-			defaultPermission: true,
 		});
 	}
 

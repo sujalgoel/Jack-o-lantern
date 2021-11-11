@@ -15,6 +15,9 @@ const ChannelSchema = new Mongoose.Schema({
 	lastCandy: {
 		type: Date,
 	},
+	lastLick: {
+		type: Date,
+	},
 });
 
 module.exports = Mongoose.model('Jack-o\'-lantern Users', ChannelSchema);

@@ -11,7 +11,6 @@ module.exports = class HalloweenReddit extends Command {
 			category: 'Halloween',
 			description: 'Get some posts from Halloween subreddit.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 
@@ -160,7 +159,7 @@ module.exports = class HalloweenReddit extends Command {
 					collector.resetTimer();
 				});
 
-				this.client.on('messageDelete', async (m) => {
+				client.on('messageDelete', async (m) => {
 					if(m.id === msg.id) {
 						return collector.stop();
 					}

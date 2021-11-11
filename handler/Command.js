@@ -9,7 +9,6 @@ module.exports = class CommandClass {
 
 	async build(dir) {
 		try {
-			const slash = [];
 			const filePath = path.join(__dirname, dir);
 			const files = await fs.readdir(filePath);
 			for (const file of files) {
@@ -20,14 +19,12 @@ module.exports = class CommandClass {
 					if (Command.prototype instanceof BaseCommand) {
 						const cmd = new Command(this.client);
 						await this.client.commands.set(cmd.name, cmd);
-						slash.push(cmd);
 						await this.client.guilds.cache
 							.get(process.env.GUILD_ID)
 							.commands.create(cmd);
 					}
 				}
 			}
-			// await this.client.application.commands.set(slash);
 		} catch (e) {
 			console.log(e);
 		}

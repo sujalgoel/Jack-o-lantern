@@ -10,7 +10,6 @@ module.exports = class AboutHalloween extends Command {
 			category: 'Info',
 			description: 'Don\'t know what is Halloween? Learn from here.',
 			cooldown: 3,
-			defaultPermission: true,
 		});
 	}
 

@@ -11,13 +11,11 @@ module.exports = class Spookify extends Command {
 			category: 'Context',
 			contextDescription: 'Spookifies user avatar.',
 			cooldown: 5,
-			defaultPermission: true,
 		});
 	}
 	async run(client, interaction) {
 		try {
 			const member = interaction.guild.members.cache.get(interaction.targetId);
-
 			const data = await axios({
 				method: 'get',
 				url: `https://api.sujalgoel.engineer/image/halloween?image=${member.user.displayAvatarURL(
